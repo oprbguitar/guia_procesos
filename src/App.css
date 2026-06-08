@@ -846,3 +846,371 @@
     text-align: center;
   }
 }
+
+@media (min-width: 1181px) {
+  .app-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero-header {
+    grid-template-columns: minmax(150px, 220px) 1fr minmax(180px, 240px);
+    gap: 16px;
+    min-height: 142px;
+    padding: 14px 28px 16px;
+  }
+
+  .brand-lockup {
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 56px;
+    height: 56px;
+  }
+
+  .brand-mark span {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-lockup strong {
+    font-size: clamp(1.45rem, 1.8vw, 2rem);
+  }
+
+  .brand-lockup small {
+    max-width: 145px;
+    margin-top: 3px;
+    font-size: 0.68rem;
+  }
+
+  .author-pill {
+    gap: 9px;
+    min-height: 32px;
+    padding: 4px 15px;
+    font-size: clamp(0.72rem, 0.9vw, 0.96rem);
+  }
+
+  .author-pill svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .divider {
+    height: 18px;
+  }
+
+  .header-center h1 {
+    max-width: 720px;
+    margin: 8px auto 4px;
+    font-size: clamp(1.55rem, 2.55vw, 2.72rem);
+    line-height: 0.96;
+  }
+
+  .header-center p {
+    font-size: clamp(0.76rem, 1.15vw, 1.05rem);
+  }
+
+  .header-center p::before,
+  .header-center p::after {
+    width: 42px;
+    height: 2px;
+    margin: 0 12px 4px;
+  }
+
+  .guide-zone {
+    gap: 18px;
+  }
+
+  .guide-button {
+    gap: 10px;
+    min-height: 46px;
+    padding: 9px 18px;
+    font-size: 1.05rem;
+  }
+
+  .guide-button svg {
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+  }
+
+  .applicable {
+    gap: 10px;
+    max-width: 220px;
+    font-size: 0.84rem;
+  }
+
+  .applicable svg {
+    width: 30px;
+    height: 30px;
+    padding: 9px;
+    border-width: 2px;
+  }
+
+  .content-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    padding: 12px 0;
+  }
+
+  .phase-flow {
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .phase-flow-item {
+    gap: 8px;
+  }
+
+  .phase-card {
+    grid-template-columns: 50px 58px 1fr;
+    min-height: 70px;
+    border-radius: 10px;
+    transition: box-shadow 160ms ease, background 160ms ease;
+  }
+
+  .phase-card:hover,
+  .phase-card:focus-visible,
+  .phase-card.active,
+  .kit-button:hover,
+  .kit-button:focus-visible {
+    transform: none;
+  }
+
+  .phase-card.active::after {
+    margin-bottom: -12px;
+    border-top-width: 12px;
+    border-right-width: 12px;
+    border-left-width: 12px;
+  }
+
+  .phase-number {
+    font-size: clamp(1.6rem, 2.7vw, 2.65rem);
+  }
+
+  .phase-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .phase-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .phase-title {
+    padding-right: 8px;
+    font-size: clamp(0.78rem, 0.88vw, 0.94rem);
+  }
+
+  .flow-arrow {
+    width: 24px;
+    height: 24px;
+  }
+
+  .phase-panel {
+    grid-template-columns: 260px 1fr;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .current-phase {
+    min-height: 0;
+    padding: 22px 24px;
+  }
+
+  .current-number {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 12px;
+    font-size: 2.85rem;
+  }
+
+  .current-label {
+    font-size: 0.78rem;
+  }
+
+  .current-phase h2 {
+    margin: 5px 0 12px;
+    padding-bottom: 12px;
+    font-size: clamp(1.25rem, 1.85vw, 1.68rem);
+  }
+
+  .objective {
+    gap: 10px;
+    font-size: 0.82rem;
+    line-height: 1.18;
+  }
+
+  .objective svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .panel-main {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    animation: none;
+  }
+
+  .panel-columns {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 20px 28px 14px;
+  }
+
+  .panel-column {
+    padding: 0 24px;
+  }
+
+  .section-title {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .section-title svg {
+    width: 46px;
+    height: 46px;
+    padding: 10px;
+  }
+
+  .section-title h3 {
+    font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+  }
+
+  .panel-column ul {
+    gap: 9px;
+    font-size: clamp(0.84rem, 1vw, 1rem);
+    line-height: 1.18;
+  }
+
+  .deliverables-list {
+    gap: 7px;
+  }
+
+  .download-row {
+    min-height: 34px;
+    padding: 6px 10px 6px 14px;
+    font-size: 0.82rem;
+  }
+
+  .download-row:hover,
+  .download-row:focus-visible {
+    transform: none;
+  }
+
+  .steps-timeline {
+    gap: 18px;
+    padding: 12px 34px;
+  }
+
+  .steps-timeline li {
+    gap: 5px;
+  }
+
+  .steps-timeline li:not(:last-child)::after {
+    top: 32px;
+    left: calc(50% + 45px);
+    width: calc(100% - 66px);
+    border-top-width: 5px;
+  }
+
+  .step-index {
+    top: -1px;
+    left: calc(50% - 38px);
+    width: 26px;
+    height: 26px;
+    font-size: 0.9rem;
+  }
+
+  .step-icon {
+    width: 62px;
+    height: 62px;
+  }
+
+  .step-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .step-label {
+    font-size: clamp(0.78rem, 0.95vw, 0.92rem);
+  }
+
+  .bottom-grid {
+    flex: 0 0 104px;
+    gap: 14px;
+    margin-top: 0;
+  }
+
+  .info-box {
+    gap: 14px;
+    min-height: 104px;
+    padding: 12px 18px;
+  }
+
+  .box-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .box-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .info-box h2 {
+    margin-bottom: 6px;
+    font-size: 1.08rem;
+  }
+
+  .benefits-grid {
+    gap: 8px;
+  }
+
+  .benefit {
+    gap: 5px;
+    font-size: 0.74rem;
+  }
+
+  .benefit-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .benefit-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .references-box p {
+    font-size: 0.82rem;
+    line-height: 1.25;
+  }
+
+  .kit-button {
+    gap: 12px;
+    min-height: 104px;
+    padding: 16px 20px;
+    font-size: clamp(1rem, 1.25vw, 1.18rem);
+  }
+
+  .kit-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .kit-icon svg,
+  .kit-button > svg {
+    width: 32px;
+    height: 32px;
+  }
+}
