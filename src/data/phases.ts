@@ -51,6 +51,7 @@ export type Phase = {
   references: string[]
   icon: LucideIcon
   kitPath: string
+  kitReady?: boolean
 }
 
 export const references = {
@@ -81,15 +82,15 @@ export const phases: Phase[] = [
     deliverables: [
       {
         label: 'Plantilla de levantamiento',
-        path: '/downloads/fase-1/plantilla-levantamiento.txt',
+        path: '/downloads/fase-1/01_Plantilla_Levantamiento_Procesos_PierreR.pdf',
       },
       {
         label: 'Guía de entrevistas',
-        path: '/downloads/fase-1/guia-entrevistas.txt',
+        path: '/downloads/fase-1/02_Guia_Entrevista_Procesos_PierreR.pdf',
       },
       {
         label: 'Formato de registro',
-        path: '/downloads/fase-1/formato-registro.txt',
+        path: '/downloads/fase-1/03_Formato_Registro_Entrevista_PierreR.pdf',
       },
     ],
     steps: [
@@ -114,6 +115,7 @@ export const phases: Phase[] = [
     ],
     icon: FolderSearch,
     kitPath: '/downloads/fase-1/kit-fase-1.zip',
+    kitReady: true,
   },
   {
     id: 'fase-2',
@@ -187,13 +189,13 @@ export const phases: Phase[] = [
       'Enfoque por procesos',
     ],
     deliverables: [
-      { label: 'Informe de resultados', path: '/downloads/fase-3/informe-resultados.txt' },
+      { label: 'Informe de resultados', path: '/downloads/fase-3/Informe_Resultados.pdf' },
       {
         label: 'Mapa del proceso documentado',
-        path: '/downloads/fase-3/mapa-proceso-documentado.txt',
+        path: '/downloads/fase-3/Mapa_Proceso.pdf',
       },
-      { label: 'Matriz de brechas', path: '/downloads/fase-3/matriz-brechas.txt' },
-      { label: 'Ficha de indicadores', path: '/downloads/fase-3/ficha-indicadores.txt' },
+      { label: 'Matriz de brechas', path: '/downloads/fase-3/Excel_Matriz_Brechas.xlsx' },
+      { label: 'Ficha de indicadores', path: '/downloads/fase-3/Ficha_Indicadores.pdf' },
     ],
     steps: [
       { label: 'Consolidar', icon: FileChartColumn },
@@ -217,6 +219,7 @@ export const phases: Phase[] = [
     ],
     icon: FileChartColumn,
     kitPath: '/downloads/fase-3/kit-fase-3.zip',
+    kitReady: true,
   },
   {
     id: 'fase-4',

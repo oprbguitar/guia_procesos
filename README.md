@@ -35,22 +35,38 @@ Para cambiar el color de una fase, edita `color` y `accent` en el objeto corresp
 
 ## Reemplazar documentos descargables
 
-Los archivos preliminares están organizados en:
+Los documentos fuente pueden organizarse en `docs/` por carpeta de proceso. Para que GitHub Pages pueda descargarlos, deben existir también dentro de `public/downloads/`, que es la carpeta pública servida por Vite:
 
 ```text
+docs/recuperacion e informacion/
+docs/resultado y documentacion/
+
 public/downloads/fase-1/
 public/downloads/fase-2/
 public/downloads/fase-3/
 public/downloads/fase-4/
 ```
 
-Actualmente son placeholders `.txt` con el mensaje:
+Actualmente las fases 1 y 3 usan documentos reales:
+
+```text
+public/downloads/fase-1/01_Plantilla_Levantamiento_Procesos_PierreR.pdf
+public/downloads/fase-1/02_Guia_Entrevista_Procesos_PierreR.pdf
+public/downloads/fase-1/03_Formato_Registro_Entrevista_PierreR.pdf
+
+public/downloads/fase-3/Informe_Resultados.pdf
+public/downloads/fase-3/Mapa_Proceso.pdf
+public/downloads/fase-3/Excel_Matriz_Brechas.xlsx
+public/downloads/fase-3/Ficha_Indicadores.pdf
+```
+
+Las fases 2 y 4 conservan placeholders `.txt` con el mensaje:
 
 ```text
 Archivo preliminar. Será reemplazado por la documentación oficial proporcionada por Pierre R.
 ```
 
-Cuando existan los documentos finales, colócalos en esas carpetas y actualiza la propiedad `path` de cada entregable en `src/data/phases.ts`. Por ejemplo:
+Cuando existan los documentos finales de otra fase, colócalos en `docs/` para respaldo, cópialos a `public/downloads/fase-n/` para publicación y actualiza la propiedad `path` de cada entregable en `src/data/phases.ts`. Por ejemplo:
 
 ```ts
 {

@@ -5,11 +5,20 @@ type DeliverablesListProps = {
   deliverables: Deliverable[]
 }
 
+function publicDownloadPath(path: string) {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+}
+
 export function DeliverablesList({ deliverables }: DeliverablesListProps) {
   return (
     <div className="deliverables-list">
       {deliverables.map((deliverable) => (
-        <a className="download-row" href={deliverable.path} download key={deliverable.path}>
+        <a
+          className="download-row"
+          href={publicDownloadPath(deliverable.path)}
+          download
+          key={deliverable.path}
+        >
           <span>{deliverable.label}</span>
           <Download size={22} aria-hidden="true" />
         </a>
