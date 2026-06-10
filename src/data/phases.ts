@@ -139,10 +139,10 @@ export const phases: Phase[] = [
       'Enfoque por procesos',
     ],
     deliverables: [
-      { label: 'Matriz de hallazgos', path: '/downloads/fase-2/matriz-hallazgos.txt' },
-      { label: 'Mapa de proceso AS-IS', path: '/downloads/fase-2/mapa-proceso-as-is.txt' },
-      { label: 'Ficha de brechas', path: '/downloads/fase-2/ficha-brechas.txt' },
-      { label: 'Reporte de análisis', path: '/downloads/fase-2/reporte-analisis.txt' },
+      { label: 'Matriz de hallazgos', path: '/downloads/fase-2/Matriz_de_Hallazgos.xlsx' },
+      { label: 'Mapa de proceso AS-IS', path: '/downloads/fase-2/Mapa_de_Proceso_AS-IS.docx' },
+      { label: 'Ficha de brechas', path: '/downloads/fase-2/Ficha_de_Brechas.docx' },
+      { label: 'Reporte de análisis', path: '/downloads/fase-2/Reporte_de_Analisis.docx' },
     ],
     steps: [
       { label: 'Consolidar', icon: Database },
@@ -166,6 +166,7 @@ export const phases: Phase[] = [
     ],
     icon: BarChart3,
     kitPath: '/downloads/fase-2/kit-fase-2.zip',
+    kitReady: true,
   },
   {
     id: 'fase-3',
@@ -243,13 +244,13 @@ export const phases: Phase[] = [
       'Enfoque de mejora continua',
     ],
     deliverables: [
-      { label: 'Plan de acción', path: '/downloads/fase-4/plan-accion.txt' },
+      { label: 'Plan de acción', path: '/downloads/fase-4/Plan_de_Accion.docx' },
       {
         label: 'Cronograma de implementación',
-        path: '/downloads/fase-4/cronograma-implementacion.txt',
+        path: '/downloads/fase-4/Cronograma_de_Implementacion.xlsx',
       },
-      { label: 'Matriz de seguimiento', path: '/downloads/fase-4/matriz-seguimiento.txt' },
-      { label: 'Reporte de mejora', path: '/downloads/fase-4/reporte-mejora.txt' },
+      { label: 'Matriz de seguimiento', path: '/downloads/fase-4/Matriz_de_Seguimiento.xlsx' },
+      { label: 'Reporte de mejora', path: '/downloads/fase-4/Reporte_de_Mejora.docx' },
     ],
     steps: [
       { label: 'Definir', icon: Target },
@@ -273,5 +274,6 @@ export const phases: Phase[] = [
     ],
     icon: ClipboardCheck,
     kitPath: '/downloads/fase-4/kit-fase-4.zip',
+    kitReady: true,
   },
 ]

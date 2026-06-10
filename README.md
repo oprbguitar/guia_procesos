@@ -2,100 +2,112 @@
 
 Página web interactiva de una sola vista para la guía “¿Cómo mapear los flujos de procesos de esta entidad?”. La app permite seleccionar 4 fases del flujo MAPEA y actualizar dinámicamente el panel central sin navegar, recargar ni abrir nuevas páginas.
 
-## Ejecutar el proyecto
+---
 
-```bash
-npm install
-npm run dev
+## Ejecutar Offline y Autoejecutable (Fácil)
+
+El proyecto incluye un script autoejecutable para Windows que inicia la aplicación automáticamente sin necesidad de internet ni configuraciones complejas. Solo debes hacer doble clic en el siguiente archivo en la raíz del proyecto:
+
+```text
+iniciar_guia.bat
 ```
 
-## Compilar y previsualizar
+Este script detectará de forma inteligente tu entorno local para iniciar la guía:
+1. **Con Node.js (Recomendado):** Si tienes Node.js instalado, instalará las dependencias si faltan (`npm install`), iniciará el servidor de desarrollo offline (`npm run dev`) y abrirá automáticamente tu navegador en `http://localhost:5173`.
+2. **Con Python:** Si no cuentas con Node.js pero sí con Python, iniciará un servidor web local liviano que sirve la carpeta precompilada (`dist/`) con redirección de rutas y abrirá automáticamente tu navegador en `http://localhost:8080/guia_procesos/`.
+
+---
+
+## Ejecutar manualmente (Instalación fácil)
+
+Si prefieres ejecutar los comandos manualmente o te encuentras en otro sistema operativo (macOS o Linux):
+
+### Opción A: Con Node.js (Recomendado)
+1. Instala las dependencias necesarias:
+   ```bash
+   npm install
+   ```
+2. Ejecuta el servidor local de desarrollo:
+   ```bash
+   npm run dev
+   ```
+3. Abre tu navegador web en la dirección indicada por la consola (normalmente `http://localhost:5173`).
+
+### Opción B: Con Python (Solo visualización de la compilación)
+Si deseas ver la versión de producción ya compilada (`dist`) sin instalar Node.js:
+1. Ejecuta el script de servidor de redirección:
+   ```bash
+   python serve_offline.py
+   ```
+2. Abre tu navegador web en `http://localhost:8080/guia_procesos/`.
+
+---
+
+## Compilar y previsualizar en local
+
+Si deseas compilar la aplicación para generar los archivos listos para producción:
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Editar contenidos
+---
 
-Los textos, colores, entregables, pasos internos, beneficios y referencias por fase están en:
+## Estructura de Documentos Descargables (Entregables)
+
+Los documentos fuente reales se encuentran organizados dentro de `docs/` por fase de proceso. Para que la web pueda servirlos de forma estática y permitir su descarga, están almacenados en `public/downloads/`:
+
+```text
+docs/recuperacion e informacion/  -> public/downloads/fase-1/
+docs/proceso de analisis/          -> public/downloads/fase-2/
+docs/resultado y documentacion/    -> public/downloads/fase-3/
+docs/pasos a seguir/               -> public/downloads/fase-4/
+```
+
+### Documentos oficiales cargados:
+- **Fase 1 (Recuperación de información):**
+  - `01_Plantilla_Levantamiento_Procesos_PierreR.pdf`
+  - `02_Guia_Entrevista_Procesos_PierreR.pdf`
+  - `03_Formato_Registro_Entrevista_PierreR.pdf`
+  - Kit completo: `kit-fase-1.zip`
+- **Fase 2 (Proceso de análisis):**
+  - `Ficha_de_Brechas.docx`
+  - `Mapa_de_Proceso_AS-IS.docx`
+  - `Matriz_de_Hallazgos.xlsx`
+  - `Reporte_de_Analisis.docx`
+  - Kit completo: `kit-fase-2.zip`
+- **Fase 3 (Resultado y documentación):**
+  - `Informe_Resultados.pdf`
+  - `Mapa_Proceso.pdf`
+  - `Excel_Matriz_Brechas.xlsx`
+  - `Ficha_Indicadores.pdf`
+  - Kit completo: `kit-fase-3.zip`
+- **Fase 4 (Pasos a seguir):**
+  - `Plan_de_Accion.docx`
+  - `Cronograma_de_Implementacion.xlsx`
+  - `Matriz_de_Seguimiento.xlsx`
+  - `Reporte_de_Mejora.docx`
+  - Kit completo: `kit-fase-4.zip`
+
+Todos los kits completos en formato `.zip` están habilitados y listos para descarga.
+
+---
+
+## Editar Contenidos
+
+Los textos, colores, entregables, pasos, beneficios y referencias se configuran en:
 
 ```text
 src/data/phases.ts
 ```
 
-Cada fase usa estos campos principales:
-
-```text
-id, number, title, shortTitle, color, accent, objective,
-whatIsDone, methodology, deliverables, steps, benefits, references
-```
-
-Para cambiar el color de una fase, edita `color` y `accent` en el objeto correspondiente. La interfaz usa esos valores para resaltar la tarjeta activa, el panel lateral, viñetas y línea de pasos.
-
-## Reemplazar documentos descargables
-
-Los documentos fuente pueden organizarse en `docs/` por carpeta de proceso. Para que GitHub Pages pueda descargarlos, deben existir también dentro de `public/downloads/`, que es la carpeta pública servida por Vite:
-
-```text
-docs/recuperacion e informacion/
-docs/resultado y documentacion/
-
-public/downloads/fase-1/
-public/downloads/fase-2/
-public/downloads/fase-3/
-public/downloads/fase-4/
-```
-
-Actualmente las fases 1 y 3 usan documentos reales:
-
-```text
-public/downloads/fase-1/01_Plantilla_Levantamiento_Procesos_PierreR.pdf
-public/downloads/fase-1/02_Guia_Entrevista_Procesos_PierreR.pdf
-public/downloads/fase-1/03_Formato_Registro_Entrevista_PierreR.pdf
-
-public/downloads/fase-3/Informe_Resultados.pdf
-public/downloads/fase-3/Mapa_Proceso.pdf
-public/downloads/fase-3/Excel_Matriz_Brechas.xlsx
-public/downloads/fase-3/Ficha_Indicadores.pdf
-```
-
-Las fases 2 y 4 conservan placeholders `.txt` con el mensaje:
-
-```text
-Archivo preliminar. Será reemplazado por la documentación oficial proporcionada por Pierre R.
-```
-
-Cuando existan los documentos finales de otra fase, colócalos en `docs/` para respaldo, cópialos a `public/downloads/fase-n/` para publicación y actualiza la propiedad `path` de cada entregable en `src/data/phases.ts`. Por ejemplo:
-
-```ts
-{
-  label: 'Plantilla de levantamiento',
-  path: '/downloads/fase-1/plantilla-levantamiento.docx',
-}
-```
-
-## Kits por fase
-
-Cada fase tiene una ruta preparada para ZIP:
-
-```text
-/downloads/fase-1/kit-fase-1.zip
-/downloads/fase-2/kit-fase-2.zip
-/downloads/fase-3/kit-fase-3.zip
-/downloads/fase-4/kit-fase-4.zip
-```
-
-Mientras los ZIP no existan, el botón “Descargar kit de la fase” muestra el mensaje: “Kit en preparación. Los documentos serán incorporados en la siguiente versión.”
+---
 
 ## GitHub Pages
 
-El proyecto está preparado para GitHub Pages con Vite. En local usa base `/`; en GitHub Actions usa `/guia_procesos/`.
-
-El workflow está en:
+El proyecto se despliega automáticamente en GitHub Pages usando GitHub Actions cuando se hace push a la rama `main`. El archivo de workflow se encuentra en:
 
 ```text
 .github/workflows/deploy.yml
 ```
-
-Se ejecuta al hacer push a `main`, instala dependencias, compila el proyecto y publica `dist` en GitHub Pages.

@@ -1,8 +1,17 @@
-import { Building2, Info, Mail, UserRound } from 'lucide-react'
+import { ArrowLeft, Building2, Info, Mail, UserRound } from 'lucide-react'
 
 export function Header() {
   return (
     <header className="hero-header">
+      <a
+        href="https://oprbguitar.github.io/CV/?v=6aa8181"
+        className="header-back-link"
+        aria-label="Retornar a mi CV"
+      >
+        <ArrowLeft size={18} aria-hidden="true" />
+        <span>Retorno</span>
+      </a>
+
       <div className="brand-lockup" aria-label="MAPEA Procesos que generan valor">
         <div className="brand-mark" aria-hidden="true">
           <span />

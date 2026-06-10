@@ -12,12 +12,52 @@
   align-items: start;
   gap: 24px;
   min-height: 238px;
-  padding: 26px 34px 30px;
+  padding: 56px 34px 30px;
   overflow: hidden;
   color: #ffffff;
   background:
     linear-gradient(135deg, rgba(4, 20, 87, 0.9), rgba(0, 91, 190, 0.68) 42%, rgba(0, 158, 118, 0.92)),
     linear-gradient(120deg, #05186c 0%, #075bbf 46%, #10a642 100%);
+}
+
+.header-back-link {
+  position: absolute;
+  top: 15px;
+  left: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.header-back-link:hover,
+.header-back-link:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateX(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.header-back-link svg {
+  transition: transform 0.2s ease;
+}
+
+.header-back-link:hover svg {
+  transform: translateX(-2px);
 }
 
 .hero-header::before,
@@ -746,7 +786,12 @@
 
 @media (max-width: 760px) {
   .hero-header {
-    padding: 22px 18px 26px;
+    padding: 52px 18px 26px;
+  }
+
+  .header-back-link {
+    top: 12px;
+    left: 18px;
   }
 
   .brand-lockup {
@@ -778,6 +823,7 @@
     justify-content: center;
     text-align: left;
   }
+
 
   .content-shell {
     width: min(100% - 24px, 1510px);
@@ -860,7 +906,12 @@
     grid-template-columns: minmax(150px, 220px) 1fr minmax(180px, 240px);
     gap: 16px;
     min-height: 142px;
-    padding: 14px 28px 16px;
+    padding: 44px 28px 16px;
+  }
+
+  .header-back-link {
+    top: 10px;
+    left: 28px;
   }
 
   .brand-lockup {
